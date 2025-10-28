@@ -2,13 +2,8 @@ import { Button } from "@/components/ui/button";
 import Icon from "@/components/ui/icon";
 
 const Index = () => {
-  const handleDownload = (platform: string) => {
-    const link = document.createElement('a');
-    link.href = `https://example.com/delta-os-${platform.toLowerCase()}.zip`;
-    link.download = `DeltaOS-${platform}.zip`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = () => {
+    window.open('https://drive.google.com/drive/folders/1nI38J2DRuBWeXH1FE8zzQB8zrcPko_qj', '_blank');
   };
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#9b87f5] via-[#7E69AB] to-[#9b87f5] flex flex-col">
@@ -33,7 +28,7 @@ const Index = () => {
             
             <div className="space-y-4">
               <Button 
-                onClick={() => handleDownload('Windows')}
+                onClick={handleDownload}
                 className="w-full h-16 text-2xl font-bold bg-black text-[#9b87f5] hover:bg-[#000000e6] border-4 border-black transition-all hover:scale-105"
                 style={{ fontFamily: 'Oswald, sans-serif' }}
               >
